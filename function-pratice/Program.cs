@@ -137,7 +137,7 @@ namespace FunctionPractice          // ← 命名空間(分類用)
         // 3. 題目三 : 寫一個function，回傳輸入的值是否符合Ｅ－ｍａｉｌ格式
         static string Q3(string email)
         {
-            string pattern = @"^[^@\n]+@[^@\n]+\.[^@\n]+$";
+            string pattern = @"^[^@\s]+@[^@\s]+\.[^@\n\s]+$";
             Regex regObj = new Regex(pattern);
             bool a = regObj.IsMatch(email);
             string result = "";
@@ -244,7 +244,7 @@ namespace FunctionPractice          // ← 命名空間(分類用)
                 case 5: dayofweek = "星期五"; break;
                 case 6: dayofweek = "星期六"; break;
             }
-            return "民國" + (year - 1911) + "年" + p[1] + "月" + p[2] + "日" + " " + "星期" + dayofweek;
+            return "民國" + (year - 1911) + "年" + p[1] + "月" + p[2] + "日" + " " + dayofweek;
         }
         // 9. 題目九 : 寫一個function，回傳輸入的年是否閏年
         static string Q9(int year)
